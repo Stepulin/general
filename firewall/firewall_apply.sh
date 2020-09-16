@@ -1,5 +1,7 @@
 #!/bin/bash
 # Simple script that runs firewall.sh file, save new rules and print the output.
+# Make sure that iptables-persistent package is present -> install it
+apt update && apt install iptables-persistent
 
 echo "Applying firewall.sh"
 for i in {3..1}
