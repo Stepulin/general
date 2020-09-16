@@ -1,5 +1,5 @@
 #!/bin/bash
-# Simple script that runs firewall.sh file, save new rules and print the output.
+# Simple script that runs firewall.sh file, saves new rules and prints the output.
 
 echo "Applying firewall.sh"
 for i in {3..1}
