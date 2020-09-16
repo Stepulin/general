@@ -6,7 +6,7 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Option 1")
-            wget https://raw.githubusercontent.com/Stepulin/general/master/package/update.sh | bash update.sh
+            wget https://raw.githubusercontent.com/Stepulin/general/master/package/update.sh && bash update.sh
             ;;
         "Option 2")
             echo "you chose choice 2"
