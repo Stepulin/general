@@ -3,14 +3,14 @@
 # Make sure that iptables-persistent package is present -> install it
 apt update && apt install iptables-persistent
 
-echo "Applying firewall.sh"
+echo "Applying firewall_rules.sh"
 for i in {3..1}
 do
     echo "$i"
     /usr/bin/sleep 1
 done
 
-bash firewall.sh
+bash firewall_rules.sh
 
 echo "Processing ..."
 for i in {3..1}
