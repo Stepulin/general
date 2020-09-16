@@ -10,5 +10,5 @@ apt install mc net-tools apt-transport-https aptitude wget ca-certificates curl 
 ## Package
 
 ```
-wget https://raw.githubusercontent.com/Stepulin/general/master/package/package.sh | bash package.sh
+wget https://raw.githubusercontent.com/Stepulin/general/master/package/package.sh && bash package.sh
 ```
