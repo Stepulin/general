@@ -1,5 +1,5 @@
 #!/bin/bash
-# Created on 12. 5. 2018; version 1.0
+# Created on 12. 5. 2018; version 1.2020-09-16
 # Created by Jan Stepanek, contributor Martin Hunek
 #####################################
 #####################
