@@ -12,3 +12,8 @@ apt install mc net-tools apt-transport-https aptitude wget ca-certificates curl 
 ```
 wget https://raw.githubusercontent.com/Stepulin/general/master/package/package.sh && bash package.sh
 ```
+
+## KB
+
+fi terminates the preceding if, while ;; terminates the y) case in the case...esac.
+
