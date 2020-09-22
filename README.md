@@ -2,7 +2,7 @@
 
 `apt update && apt upgrade && apt autoremove`
 
-`mkdir .ssh; nano .ssh/authorized_keys`
+`mkdir .ssh; nano .ssh/authorized_keys;`
 
 
 ---
