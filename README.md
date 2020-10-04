@@ -24,3 +24,6 @@ fi terminates the preceding if, while ;; terminates the y) case in the case...es
 
 #### Windows Server HDD usage in Task Manager
 diskperf -y
+
+#### CentOS change IP
+nmtui
