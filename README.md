@@ -22,3 +22,5 @@ wget https://raw.githubusercontent.com/Stepulin/general/master/package/package.s
 
 fi terminates the preceding if, while ;; terminates the y) case in the case...esac.
 
+#### Windows Server HDD usage in Task Manager
+diskperf -y
