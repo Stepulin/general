@@ -35,6 +35,7 @@ iptables -N ICMP_CHK
 #######
 # Local
 #######
+iptables -A INPUT -s 10.1.0.0/16 -j ACCEPT
 iptables -A INPUT -s 10.101.0.0/16 -j ACCEPT
 iptables -A INPUT -s 192.168.1.1/24 -j ACCEPT
 
