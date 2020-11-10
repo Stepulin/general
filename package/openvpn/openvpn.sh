@@ -33,8 +33,8 @@ read surnamefirstname
 
 mkdir /etc/openvpn/$surnamefirstname/
 cp pki/ca.crt /etc/openvpn/$surnamefirstname/
-cp pki/issued/client.crt /etc/openvpn/$surnamefirstname/
-cp pki/private/client.key /etc/openvpn/$surnamefirstname/
+cp pki/issued/$surnamefirstname.crt /etc/openvpn/$surnamefirstname/
+cp pki/private/$surnamefirstname.key /etc/openvpn/$surnamefirstname/
 
 systemctl start openvpn@server
 systemctl enable openvpn@server
