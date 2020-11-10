@@ -36,6 +36,12 @@ cp pki/ca.crt /etc/openvpn/$surnamefirstname/
 cp pki/issued/$surnamefirstname.crt /etc/openvpn/$surnamefirstname/
 cp pki/private/$surnamefirstname.key /etc/openvpn/$surnamefirstname/
 
+rm -r /etc/openvpn/server/
+rm -r /etc/openvpn/client/
+
+cd /etc/openvpn/
+wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/server.conf
+
 systemctl status openvpn@server
 systemctl start openvpn@server
 systemctl enable openvpn@server
