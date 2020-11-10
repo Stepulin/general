@@ -31,7 +31,7 @@ read surnamefirstname
 ./easyrsa gen-req $surnamefirstname nopass
 ./easyrsa sign-req client $surnamefirstname
 
-mkdir $surnamefirstname
+mkdir /etc/openvpn/$surnamefirstname/
 cp pki/ca.crt /etc/openvpn/$surnamefirstname/
 cp pki/issued/client.crt /etc/openvpn/$surnamefirstname/
 cp pki/private/client.key /etc/openvpn/$surnamefirstname/
