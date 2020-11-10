@@ -36,9 +36,16 @@ cp pki/ca.crt /etc/openvpn/$surnamefirstname/
 cp pki/issued/$surnamefirstname.crt /etc/openvpn/$surnamefirstname/
 cp pki/private/$surnamefirstname.key /etc/openvpn/$surnamefirstname/
 
+systemctl status openvpn@server
 systemctl start openvpn@server
 systemctl enable openvpn@server
 
 # To see the log
 tail -f /var/log/openvpn/openvpn.log
-systemctl status openvpn@server
+
+iptables -A FORWARD -i eth0 -o tun0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A FORWARD -s 192.168.123.0/24 -o eth0 -j ACCEPT
+iptables -t nat -A POSTROUTING -s 192.168.123.0/24 -o eth0 -j MASQUERADE
+
+bash /root/firewall_apply.sh
+
