@@ -49,6 +49,7 @@ systemctl enable openvpn@server
 # To see the log
 tail -f /var/log/openvpn/openvpn.log
 
+iptables -A INPUT -p udp --dport 1194 -j ACCEPT
 iptables -A FORWARD -i eth0 -o tun0 -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A FORWARD -s 192.168.123.0/24 -o eth0 -j ACCEPT
 iptables -t nat -A POSTROUTING -s 192.168.123.0/24 -o eth0 -j MASQUERADE
