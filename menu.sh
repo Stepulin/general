@@ -15,7 +15,7 @@ do
             wget https://raw.githubusercontent.com/Stepulin/general/master/update.sh && bash update.sh
             ;;
         "Firewall")
-            echo "you chose choice 2"
+            wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall.sh && bash firewall.sh
             ;;
         "Clean Up")
             echo "Deleting everything in this folder"
