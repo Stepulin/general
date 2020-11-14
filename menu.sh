@@ -1,11 +1,9 @@
 #!/bin/bash
 # Preparing massive package; however, still in progress
 clear
-
 echo "##################################################"
 echo "###############    script//menu    ###############"
 echo "##################################################"
-
 PS3='Please enter your choice: '
 options=("Exit" "Clear" "Update" "Firewall" "Clean Up")
 select opt in "${options[@]}"
