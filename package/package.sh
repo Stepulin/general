@@ -18,8 +18,8 @@ do
             echo "you chose choice 2"
             ;;
         "Clean Up")
-            echo "Deleting everything that was downloaded"
-            rm update.sh
+            echo "Deleting everything in this folder"
+            rm *
             echo "Done"
             ;;
         "Exit")
