@@ -1,20 +1,28 @@
+#!/bin/bash
 # Preparing massive package; however, still in progress
+clear
+
+echo "##################################################
+echo "###############    script//menu    ###############
+echo "##################################################
 
 PS3='Please enter your choice: '
-options=("Option 1" "Option 2" "Option 3" "Quit")
+options=("Update" "Firewall" "Clean Up" "Exit")
 select opt in "${options[@]}"
 do
     case $opt in
-        "Option 1")
+        "Update")
             wget https://raw.githubusercontent.com/Stepulin/general/master/package/update.sh && bash update.sh
             ;;
-        "Option 2")
+        "Firewall")
             echo "you chose choice 2"
             ;;
-        "Option 3")
-            echo "you chose choice $REPLY which is $opt"
+        "Clean Up")
+            echo "Deleting everything that was downloaded"
+            rm update.sh
+            echo "Done"            
             ;;
-        "Quit")
+        "Exit")
             break
             ;;
         *) echo "invalid option $REPLY";;
