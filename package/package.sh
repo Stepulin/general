@@ -20,7 +20,7 @@ do
         "Clean Up")
             echo "Deleting everything that was downloaded"
             rm update.sh
-            echo "Done"            
+            echo "Done"
             ;;
         "Exit")
             break
