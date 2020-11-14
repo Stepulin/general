@@ -2,9 +2,9 @@
 # Preparing massive package; however, still in progress
 clear
 
-echo "##################################################
-echo "###############    script//menu    ###############
-echo "##################################################
+echo "##################################################"
+echo "###############    script//menu    ###############"
+echo "##################################################"
 
 PS3='Please enter your choice: '
 options=("Update" "Firewall" "Clean Up" "Exit")
