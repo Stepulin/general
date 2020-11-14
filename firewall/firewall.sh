@@ -19,6 +19,7 @@ do
             ;;
         "Exit")
             echo "exiting"
+            break
             ;;
         *) echo "invalid option $REPLY";;
     esac
