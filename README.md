@@ -21,7 +21,13 @@ wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall
 ## Package
 
 ```
-wget https://raw.githubusercontent.com/Stepulin/general/master/package/package.sh && bash package.sh
+wget https://raw.githubusercontent.com/Stepulin/general/master/menu.sh && bash menu.sh
+```
+
+OR
+
+```
+wget https://raw.githubusercontent.com/Stepulin/general/master/menu.sh && chmod +x menu.sh && ./menu.sh
 ```
 
 ## KB
