@@ -1,15 +1,31 @@
+echo "#################"
+echo "Adding new client"
+echo "#################"
+echo "Enter you name in following form: surnamefirstname"
+read surnamefirstname
+echo "Enter FQDN of your server"
+read serverfqdn
+
+cd /etc/openvpn/easy-rsa/
+./easyrsa gen-req $surnamefirstname nopass
+./easyrsa sign-req client $surnamefirstname
+mkdir /etc/openvpn/$surnamefirstname/
+cp pki/ca.crt /etc/openvpn/$surnamefirstname/
+cp pki/issued/$surnamefirstname.crt /etc/openvpn/$surnamefirstname/
+cp pki/private/$surnamefirstname.key /etc/openvpn/$surnamefirstname/
+
 cd /etc/openvpn/$surnamefirstname
+wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/client_file.ovpn
+echo cert $surnamefirstname.crt >> client_file.ovpn
+echo key $surnamefirstname.key >> client_file.ovpn
 
-wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/client_user.ovpn
+sed -i "s|xyz|$serverfqdn|g" /etc/openvpn/$surnamefirstname/client_file.ovpn
 
-echo cert $surnamefirstname.crt >> client_user.ovpn
-echo key $surnamefirstname.key >> client_user.ovpn
-
-mv client_user.ovpn $surnamefirstname.ovpn
+mv client_file.ovpn $surnamefirstname.ovpn
 
 cd ..
-cp dh.pem ta.key $surnamefirstname/
 
+cp dh.pem ta.key $surnamefirstname/
 
 # Config only OVPN file
 cd /etc/openvpn/$surnamefirstname/
