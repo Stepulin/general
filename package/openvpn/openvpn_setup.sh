@@ -1,6 +1,9 @@
 # Install OpenVPN
 apt install openvpn
 
+# Firewall
+wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh && wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh && bash firewall_apply.sh
+
 echo "####################"
 echo "Seting up the server"
 echo "####################"
