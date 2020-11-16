@@ -93,9 +93,11 @@ cd /etc/openvpn/server/
 if [ "$proto" = "udp" ]
 then
   wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/server_file_udp.conf
+  mv server_file_udp.conf server.conf
 elif [ "$proto" = "tcp" ]
 then
   wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/server_file_tcp.conf
+  mv server_file_tcp.conf server.conf
 else
   echo "Error"
   read -p "Press ENTER and start again"
