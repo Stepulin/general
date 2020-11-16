@@ -2,7 +2,9 @@
 apt install openvpn
 
 # Firewall
-wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh && wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh && bash firewall_apply.sh
+wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh
+wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh
+bash firewall_apply.sh
 
 echo "####################"
 echo "Seting up the server"
@@ -27,6 +29,7 @@ fi
 # Copy Easy-RSA and edit some lines based on your preferences
 cp -r /usr/share/easy-rsa/ /etc/openvpn/
 cd /etc/openvpn/easy-rsa/
+cp vars.example vars
 
 echo "###########################"
 echo "Set information for CA/CERT"
