@@ -127,6 +127,7 @@ echo "iptables -A FORWARD -s 192.168.123.0/24 -o eth0 -j ACCEPT" >> /root/firewa
 echo "iptables -t nat -A POSTROUTING -s 192.168.123.0/24 -o eth0 -j MASQUERADE" >> /root/firewall_rules.sh
 
 echo "Applying these rules by running firewall_apply.sh"
-bash /root/firewall_apply.sh
+cd
+bash firewall_apply.sh
 
 echo "To see the log run following command: tail -f /var/log/openvpn/openvpn.log"
