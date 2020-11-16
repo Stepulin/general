@@ -3,8 +3,11 @@ apt install openvpn
 
 # Firewall
 wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh
+sleep 1
 wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh
+sleep 1
 bash firewall_apply.sh
+sleep 1
 
 echo "####################"
 echo "Seting up the server"
@@ -98,11 +101,18 @@ else
   read -p "Press ENTER and start again"
 fi
 
-systemctl status openvpn@server
+#systemctl status openvpn@server
+#read -p "Press ENTER and start again"
+#systemctl start openvpn@server
+#systemctl enable openvpn@server
+#systemctl status openvpn@server
+#read -p "Press ENTER and start again"
+
+systemctl status openvpn
 read -p "Press ENTER and start again"
-systemctl start openvpn@server
-systemctl enable openvpn@server
-systemctl status openvpn@server
+systemctl start openvpn
+systemctl enable openvpn
+systemctl status openvpn
 read -p "Press ENTER and start again"
 
 # Add necessary rules into firewall
