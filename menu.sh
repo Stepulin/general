@@ -5,7 +5,7 @@ echo "##################################################"
 echo "###############    script//menu    ###############"
 echo "##################################################"
 PS3='Please enter your choice: '
-options=("Exit" "Clear" "Update" "Firewall" "Clean Up")
+options=("Exit" "Clear" "Update" "Firewall" "Clean Up" "OpenVPN server")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -25,6 +25,9 @@ do
             echo "Deleting everything in this folder"
             rm *
             echo "Done"
+            ;;
+        "OpenVPN server")
+            wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/server_setup.sh && bash server_setup.sh
             ;;
         *) echo "invalid option $REPLY";;
     esac
