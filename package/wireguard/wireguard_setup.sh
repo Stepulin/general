@@ -18,7 +18,7 @@ ip address add dev wg0 192.168.124.1/24
 
 #Generate key
 
-umask 077; wg genkey | tee privatekey | wgpubkey > publickey
+umask 077; wg genkey | tee privatekey | wg pubkey > publickey
 
 varkeypriv="$(cat privatekey)"
 
