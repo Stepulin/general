@@ -5,8 +5,8 @@ echo "yourdomain?"
 read yourdomain
 
 cp grav.conf /etc/apache2/sites-available/
-mkdir /etc/ssl/private/$yourdomian
-cp ca.crt $yourdomian.crt $yourdomian.key /etc/ssl/private/$yourdomian/
+mkdir /etc/ssl/private/$yourdomain
+cp ca.crt $yourdomain.crt $yourdomain.key /etc/ssl/private/$yourdomain/
 cat /etc/apache2/sites-available/grav.conf
 apachectl configtest
 systemctl restart apache2
