@@ -39,3 +39,15 @@ diskperf -y
 
 #### CentOS change IP
 nmtui
+
+
+
+
+#### GRAV
+Put your **grav.conf** and **ca.crt** **yourdomain.crt** and **yourdomain.key** into **root** folder upfront
+
+Otherwise, you will have to edit /etc/apache2/sites-available/grav.conf manualy and you may experience other issues.
+
+```bash
+wget https://raw.githubusercontent.com/Stepulin/general/master/package/grav/grav_install.sh && bash grav_install.sh
+```
