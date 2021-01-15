@@ -12,23 +12,23 @@ else
 fi
 
 # Checking if "firewall_rules.sh" exists
-filefwrules="/usr/local/bin/openvpn"
+filefwrules="/root/firewall_rules.sh"
 if [ ! -f "$filefwrules" ]
 then
 	echo "Downloading firewall file with rules"
 	wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh
-  sleep 1
+	sleep 1
 else
 	echo "firewall_rules.sh already exists ..."
 fi
 
 # Checking if "firewall_apply.sh" exists
-filefwapply="/usr/local/bin/openvpn"
+filefwapply="/root/firewall_apply.sh"
 if [ ! -f "$filefwapply" ]
 then
 	echo "Downloading firewall file to apply rules and save them"
-  wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh
-  sleep 1
+	wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh
+	sleep 1
 else
 	echo "firewall_apply.sh already exists ..."
 fi
