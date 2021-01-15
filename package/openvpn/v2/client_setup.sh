@@ -16,7 +16,7 @@ cp pki/issued/$surnamefirstname.crt /etc/openvpn/clients/$surnamefirstname/
 cp pki/private/$surnamefirstname.key /etc/openvpn/clients/$surnamefirstname/
 
 cd /etc/openvpn/clients/$surnamefirstname
-wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/client_file.ovpn
+wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/v2/client_file.ovpn
 
 sed -i "s|xyz|$serverfqdn|g" /etc/openvpn/clients/$surnamefirstname/client_file.ovpn
 
