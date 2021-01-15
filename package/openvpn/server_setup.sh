@@ -1,11 +1,43 @@
 # Install OpenVPN
 apt install openvpn
 
+# Checking if "openvpn" is present in /usr/local/bin/openvpn
+fileopenvpn="/usr/local/bin/openvpn"
+if [ ! -f "$fileopenvpn" ]
+then
+	echo "Creating symlink"
+	ln -s /usr/sbin/openvpn /usr/local/bin/openvpn
+else
+	echo "File already exists ..."
+fi
+
+# Checking if "firewall_rules.sh" exists
+filefwrules="/usr/local/bin/openvpn"
+if [ ! -f "$filefwrules" ]
+then
+	echo "Downloading firewall file with rules"
+	wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh
+  sleep 1
+else
+	echo "firewall_rules.sh already exists ..."
+fi
+
+# Checking if "firewall_apply.sh" exists
+filefwapply="/usr/local/bin/openvpn"
+if [ ! -f "$filefwapply" ]
+then
+	echo "Downloading firewall file to apply rules and save them"
+  wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh
+  sleep 1
+else
+	echo "firewall_apply.sh already exists ..."
+fi
+
 # Firewall
-wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh
-sleep 1
-wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh
-sleep 1
+#wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh
+#sleep 1
+#wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh
+#sleep 1
 bash firewall_apply.sh
 sleep 1
 
@@ -39,16 +71,16 @@ echo "Set information for CA/CERT"
 echo "###########################"
 echo "Country?"
 read country
-echo "Province?"
-read province
+#echo "Province?"
+#read province
 echo "City?"
 read city
 echo "Organization?"
 read organization
-echo "Organizational Unit?"
-read organizationalunit
-echo "Email?"
-read email
+#echo "Organizational Unit?"
+#read organizationalunit
+#echo "Email?"
+#read email
 
 echo "###########################"
 echo "Set key size and expiration"
@@ -59,11 +91,11 @@ echo "CA and CERT expiration? | For 10 years set 3650"
 read expire
 # Add the information to /etc/openvpn/easy-rsa/vars
 echo "set_var EASYRSA_REQ_COUNTRY "$country"" >> /etc/openvpn/easy-rsa/vars
-echo "set_var EASYRSA_REQ_PROVINCE "$province"" >> /etc/openvpn/easy-rsa/vars
+#echo "set_var EASYRSA_REQ_PROVINCE "$province"" >> /etc/openvpn/easy-rsa/vars
 echo "set_var EASYRSA_REQ_CITY "$city"" >> /etc/openvpn/easy-rsa/vars
 echo "set_var EASYRSA_REQ_ORG "$organization"" >> /etc/openvpn/easy-rsa/vars
-echo "set_var EASYRSA_REQ_OU "$organizationalunit"" >> /etc/openvpn/easy-rsa/vars
-echo "set_var EASYRSA_REQ_EMAIL "$email"" >> /etc/openvpn/easy-rsa/vars
+#echo "set_var EASYRSA_REQ_OU "$organizationalunit"" >> /etc/openvpn/easy-rsa/vars
+#echo "set_var EASYRSA_REQ_EMAIL "$email"" >> /etc/openvpn/easy-rsa/vars
 echo "set_var EASYRSA_KEY_SIZE "$keysize"" >> /etc/openvpn/easy-rsa/vars
 echo "set_var EASYRSA_CA_EXPIRE "$expire"" >> /etc/openvpn/easy-rsa/vars
 echo "set_var EASYRSA_CERT_EXPIRE "$expire"" >> /etc/openvpn/easy-rsa/vars
@@ -111,11 +143,11 @@ fi
 #read -p "Press ENTER and start again"
 
 systemctl status openvpn
-read -p "Press ENTER and start again"
+read -p "Press ENTER to continue"
 systemctl start openvpn
 systemctl enable openvpn
 systemctl status openvpn
-read -p "Press ENTER and start again"
+read -p "Press ENTER to check the service"
 
 # Add necessary rules into firewall
 echo "Adding necessary rules into firewall"
