@@ -14,6 +14,7 @@ mkdir /etc/openvpn/clients/$surnamefirstname/
 cp pki/ca.crt /etc/openvpn/clients/$surnamefirstname/
 cp pki/issued/$surnamefirstname.crt /etc/openvpn/clients/$surnamefirstname/
 cp pki/private/$surnamefirstname.key /etc/openvpn/clients/$surnamefirstname/
+cp /etc/openvpn/ta.key /etc/openvpn/clients/$surnamefirstname/
 
 cd /etc/openvpn/clients/$surnamefirstname
 wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/v2/client_file.ovpn
@@ -22,13 +23,8 @@ sed -i "s|xyz|$serverfqdn|g" /etc/openvpn/clients/$surnamefirstname/client_file.
 
 mv client_file.ovpn $surnamefirstname.ovpn
 
-cd /etc/openvpn/
-
-cp dh.pem ta.key clients/$surnamefirstname/
-
 # Config only OVPN file
 cd /etc/openvpn/clients/$surnamefirstname/
-
 echo "key-direction 1" >> $surnamefirstname.ovpn
 echo "<ca>" >> $surnamefirstname.ovpn
 sed -n '/BEGIN CERTIFICATE/,/END CERTIFICATE/p' < ca.crt >> $surnamefirstname.ovpn
