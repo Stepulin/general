@@ -106,11 +106,11 @@ cp pki/issued/vpnserver.crt /etc/openvpn/
 cd /etc/openvpn/
 if [ "$proto" = "udp" ]
 then
-  wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/server_file_udp.conf
+  wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/v2/server_file_udp.conf
   mv server_file_udp.conf server.conf
 elif [ "$proto" = "tcp" ]
 then
-  wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/server_file_tcp.conf
+  wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/v2/server_file_tcp.conf
   mv server_file_tcp.conf server.conf
 else
   echo "Error"
