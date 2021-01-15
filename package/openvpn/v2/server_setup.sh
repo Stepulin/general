@@ -101,7 +101,6 @@ cp ta.key /etc/openvpn/
 cp pki/ca.crt /etc/openvpn/
 cp pki/private/vpnserver.key /etc/openvpn/
 cp pki/issued/vpnserver.crt /etc/openvpn/
-cp pki/dh.pem /etc/openvpn/
 
 # Download server configuration
 cd /etc/openvpn/
