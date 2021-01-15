@@ -94,8 +94,6 @@ echo "set_var EASYRSA_CERT_EXPIRE "$expire"" >> /etc/openvpn/easy-rsa/vars
 ./easyrsa gen-req vpnserver nopass
 # Sign the certificate
 ./easyrsa sign-req server vpnserver
-# Generate DH file
-./easyrsa gen-dh
 # Generate extra file for safety
 openvpn --genkey --secret ta.key
 # Copy all the files so you can run the server
