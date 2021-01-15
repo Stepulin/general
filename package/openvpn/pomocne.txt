@@ -1,0 +1,11 @@
+#najdi kdekoliv, typ file, s nazvem
+find / -type f -name "openvpn" 
+
+#kde se nachazi
+which openvpn
+
+
+
+wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/v2/server_setup.sh && bash server_setup.sh
+
+wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/v2/client_setup.sh && bash client_setup.sh
