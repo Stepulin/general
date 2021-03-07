@@ -1,3 +1,6 @@
+# Enable only IPv4 and forwarding on it
+wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/ipvX.sh && bash ipvX.sh
+
 # Install OpenVPN
 apt install openvpn
 
@@ -86,6 +89,9 @@ echo "set_var EASYRSA_KEY_SIZE "$keysize"" >> /etc/openvpn/easy-rsa/vars
 echo "set_var EASYRSA_CA_EXPIRE "$expire"" >> /etc/openvpn/easy-rsa/vars
 echo "set_var EASYRSA_CERT_EXPIRE "$expire"" >> /etc/openvpn/easy-rsa/vars
 
+# And generate DH file
+openssl dhparam -out /etc/openvpn/dh.pem $keysize
+
 # Initialize
 ./easyrsa init-pki
 # Build CA with no password
@@ -97,13 +103,15 @@ echo "set_var EASYRSA_CERT_EXPIRE "$expire"" >> /etc/openvpn/easy-rsa/vars
 # Generate extra file for safety
 openvpn --genkey --secret ta.key
 # Copy all the files so you can run the server
-cp ta.key /etc/openvpn/
-cp pki/ca.crt /etc/openvpn/
-cp pki/private/vpnserver.key /etc/openvpn/
-cp pki/issued/vpnserver.crt /etc/openvpn/
+mkdir /etc/openvpn/ccd
+mkdir /etc/openvpn/server
+cp ta.key /etc/openvpn/server
+cp pki/ca.crt /etc/openvpn/server
+cp pki/private/vpnserver.key /etc/openvpn/server
+cp pki/issued/vpnserver.crt /etc/openvpn/server
 
 # Download server configuration
-cd /etc/openvpn/
+cd /etc/openvpn/server
 if [ "$proto" = "udp" ]
 then
   wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/v2/server_file_udp.conf
