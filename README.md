@@ -2,6 +2,8 @@
 
 `apt update && apt upgrade && apt autoremove`
 
+`apt update && apt upgrade -y && apt autoremove -y`
+
 `mkdir .ssh; nano .ssh/authorized_keys;`
 
 ```bash
