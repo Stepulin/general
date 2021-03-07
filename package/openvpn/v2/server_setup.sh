@@ -104,14 +104,13 @@ openssl dhparam -out /etc/openvpn/dh.pem $keysize
 openvpn --genkey --secret ta.key
 # Copy all the files so you can run the server
 mkdir /etc/openvpn/ccd
-mkdir /etc/openvpn/server
-cp ta.key /etc/openvpn/server
-cp pki/ca.crt /etc/openvpn/server
-cp pki/private/vpnserver.key /etc/openvpn/server
-cp pki/issued/vpnserver.crt /etc/openvpn/server
+cp ta.key /etc/openvpn
+cp pki/ca.crt /etc/openvpn
+cp pki/private/vpnserver.key /etc/openvpn
+cp pki/issued/vpnserver.crt /etc/openvpn
 
 # Download server configuration
-cd /etc/openvpn/server
+cd /etc/openvpn
 if [ "$proto" = "udp" ]
 then
   wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/v2/server_file_udp.conf
@@ -127,6 +126,7 @@ fi
 
 systemctl status openvpn
 read -p "Press ENTER to continue"
+systemctl stop openvpn
 systemctl start openvpn
 systemctl enable openvpn
 systemctl status openvpn
