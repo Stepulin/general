@@ -136,7 +136,17 @@ read -p "Press ENTER to continue"
 echo "Adding necessary rules into firewall"
 echo "..."
 
-echo "iptables -A INPUT -p udp --dport 1194 -j ACCEPT" >> /root/firewall_rules.sh
+if [ "$proto" = "udp" ]
+then
+  echo "iptables -A INPUT -p udp --dport 1194 -j ACCEPT" >> /root/firewall_rules.sh
+elif [ "$proto" = "tcp" ]
+then
+  echo "iptables -A INPUT -p tcp --dport 443 -j ACCEPT" >> /root/firewall_rules.sh
+else
+  echo "Error"
+  read -p "Press ENTER and start again"
+fi
+
 echo "iptables -A FORWARD -i eth0 -o tun0 -m state --state ESTABLISHED,RELATED -j ACCEPT" >> /root/firewall_rules.sh
 echo "iptables -A FORWARD -s 192.168.123.0/24 -o eth0 -j ACCEPT" >> /root/firewall_rules.sh
 echo "iptables -t nat -A POSTROUTING -s 192.168.123.0/24 -o eth0 -j MASQUERADE" >> /root/firewall_rules.sh
