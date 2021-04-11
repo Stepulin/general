@@ -5,6 +5,8 @@ echo "Enter you name in following form: surnamefirstname"
 read surnamefirstname
 echo "Enter FQDN of your server"
 read serverfqdn
+echo "Which protocol do you use?"
+read proto
 
 cd /etc/openvpn/easy-rsa/
 ./easyrsa gen-req $surnamefirstname nopass
@@ -17,7 +19,17 @@ cp pki/private/$surnamefirstname.key /etc/openvpn/clients/$surnamefirstname/
 cp /etc/openvpn/ta.key /etc/openvpn/clients/$surnamefirstname/
 
 cd /etc/openvpn/clients/$surnamefirstname
-wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/v2/client_file.ovpn
+
+if [ "$proto" = "udp" ]
+then
+  wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/v2/client_file_udp.ovpn -O client_file.ovpn
+elif [ "$proto" = "tcp" ]
+then
+  wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/v2/client_file_tcp.ovpn -O client_file.ovpn
+else
+  echo "Error"
+  read -p "Press ENTER and start again"
+fi
 
 sed -i "s|xyz|$serverfqdn|g" /etc/openvpn/clients/$surnamefirstname/client_file.ovpn
 
