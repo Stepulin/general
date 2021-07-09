@@ -9,3 +9,12 @@ which openvpn
 wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/v2/server_setup.sh && bash server_setup.sh
 
 wget https://raw.githubusercontent.com/Stepulin/general/master/package/openvpn/v2/client_setup.sh && bash client_setup.sh
+
+---
+echo "Enter name of the maintanier"
+read admin
+echo "WHO? Hint: surnamefirstname"
+read who
+cd /etc/openvpn/clients/
+cp -R $who/ /home/$admin/
+chown -R $admin:$admin /home/$admin/$who
