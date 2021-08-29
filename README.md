@@ -1,10 +1,36 @@
 # general
 
-`apt update && apt upgrade && apt autoremove`
+```bash
+apt update && apt upgrade && apt autoremove
+```
 
-`apt update && apt upgrade -y && apt autoremove -y`
+```bash
+apt update && apt upgrade -y && apt autoremove -y
+```
+------
+UPGRADE
 
-`mkdir .ssh; nano .ssh/authorized_keys;`
+```bash
+apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y
+```
+
+```bash
+apt-get autoremove && apt-get clean
+```
+
+```bash
+mv /etc/apt/source.list /etc/apt/source.list.old && nano /etc/apt/source.list
+```
+
+```bash
+apt-get update -y && apt-get full-upgrade -y
+```
+
+------
+
+```bash
+mkdir .ssh; nano .ssh/authorized_keys;
+```
 
 ```bash
 apt install mc net-tools apt-transport-https aptitude wget ca-certificates curl git vlan htop ssh nano sudo dirmngr software-properties-common nfs-common cifs-utils samba-client
