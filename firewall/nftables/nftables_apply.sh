@@ -14,8 +14,7 @@ wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/nftables
 nft -f /etc/nftables.conf
 
 # Delete / purge
-
-apt ###
+apt-get purge iptables -y
 
 while true; do
     read -p "Do you want to CLEAR the terminal and LIST the current RULESET?" yn
