@@ -7,8 +7,9 @@ apt update && apt upgrade && apt autoremove
 ```bash
 apt update && apt upgrade -y && apt autoremove -y
 ```
+
 ------
-UPGRADE
+#### UPGRADE
 
 ```bash
 apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y
@@ -40,11 +41,13 @@ apt install mc net-tools apt-transport-https aptitude wget ca-certificates curl 
 apt install bash-completion && . /etc/bash_completion && echo . /etc/bash_completion >> .bashrc
 ```
 
+~~
 ## firewall
 
 ```
 wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh && wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh && bash firewall_apply.sh
 ```
+~~
 
 ## Package
 
