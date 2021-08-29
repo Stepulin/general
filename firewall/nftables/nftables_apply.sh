@@ -13,6 +13,10 @@ wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/nftables
 # Apply the rules
 nft -f /etc/nftables.conf
 
+# Delete / purge
+
+apt ###
+
 while true; do
     read -p "Do you want to CLEAR the terminal and LIST the current RULESET?" yn
     case $yn in
