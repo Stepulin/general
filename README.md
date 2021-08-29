@@ -44,9 +44,7 @@ apt install bash-completion && . /etc/bash_completion && echo . /etc/bash_comple
 
 ## firewall
 
-~~
-wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh && wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh && bash firewall_apply.sh
-~~
+~~wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh && wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh && bash firewall_apply.sh~~
 
 ```
 wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/nftables/nftables_apply.sh && bash nftables_apply.sh
