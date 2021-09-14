@@ -24,10 +24,6 @@ mv /etc/apt/sources.list /etc/apt/sources.list.old && nano /etc/apt/sources.list
 ```
 
 ```bash
-mv /etc/apt/sources.list /etc/apt/sources.list.old && cd /etc/apt/ && wget https://raw.githubusercontent.com/Stepulin/general/master/debian11/sources.list
-```
-
-```bash
 apt-get update -y && apt-get full-upgrade -y
 ```
 
