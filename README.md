@@ -20,7 +20,7 @@ apt-get autoremove && apt-get clean
 ```
 
 ```bash
-mv /etc/apt/source.list /etc/apt/source.list.old && nano /etc/apt/source.list
+mv /etc/apt/sources.list /etc/apt/sources.list.old && nano /etc/apt/sources.list
 ```
 
 ```bash
