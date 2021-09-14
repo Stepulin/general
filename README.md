@@ -42,7 +42,7 @@ apt install bash-completion && . /etc/bash_completion && echo . /etc/bash_comple
 ```
 
 
-## firewall
+## firewall ~~iptables~~ => nftables
 
 ~~wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh && wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh && bash firewall_apply.sh~~
 
