@@ -22,7 +22,7 @@ apt-get purge iptables -y
 while true; do
     read -p "Do you want to CLEAR the terminal and LIST the current RULESET?" yn
     case $yn in
-        [Yy]* ) clear && ${nft} -f list ruleset; break;;
+        [Yy]* ) clear && ${nft} list ruleset; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
