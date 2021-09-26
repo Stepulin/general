@@ -1,4 +1,7 @@
 #!/bin/bash
+# Declare the variables
+nft="/sbin/nft"
+
 # Making sure that _nftables_ package is already installed
 apt install nftables
 systemctl enable nftables
@@ -11,7 +14,7 @@ cp /etc/nftables.conf /root/nftables.conf.backup.$(date +%Y-%m-%d_%H-%M-%S)
 wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/nftables/nftables.conf && cp /root/nftables.conf /etc/nftables.conf
 
 # Apply the rules
-nft -f /etc/nftables.conf
+${nft} -f /etc/nftables.conf
 
 # Delete / purge
 apt-get purge iptables -y
@@ -19,7 +22,7 @@ apt-get purge iptables -y
 while true; do
     read -p "Do you want to CLEAR the terminal and LIST the current RULESET?" yn
     case $yn in
-        [Yy]* ) clear && nft list ruleset; break;;
+        [Yy]* ) clear && ${nft} -f list ruleset; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
