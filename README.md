@@ -66,6 +66,12 @@ wget https://raw.githubusercontent.com/Stepulin/general/master/menu.sh && chmod 
 
 fi terminates the preceding if, while ;; terminates the y) case in the case...esac.
 
+#### Linux dd write speed
+
+dd if=/dev/zero of=/tmp/test1.img bs=1G count=1 oflag=dsync
+dd if=/dev/zero of=/tmp/test1.img bs=128M count=1 oflag=dsync
+dd if=/dev/zero of=/tmp/test2.img bs=512 count=1000 oflag=dsync
+
 #### Windows Server HDD usage in Task Manager
 diskperf -y
 
