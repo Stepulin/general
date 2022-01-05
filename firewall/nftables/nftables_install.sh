@@ -12,6 +12,8 @@ cp /etc/nftables.conf /root/nftables.conf.backup.$(date +%Y-%m-%d_%H-%M-%S)
 
 # Download and copy own config that was downloaded
 wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/nftables/nftables.conf && cp /root/nftables.conf /etc/nftables.conf
+# Get an extra file for changing the rules via a file
+wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/nftables/nftables_apply.sh
 
 # Apply the rules
 ${nft} -f /etc/nftables.conf
