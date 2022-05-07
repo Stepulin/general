@@ -46,23 +46,25 @@ apt install bash-completion && . /etc/bash_completion && echo . /etc/bash_comple
 
 #### nftables
 
-```
+```bash
 wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/nftables/nftables_install.sh && bash nftables_install.sh
 ```
 
 #### iptables
 
+```bash
 wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh && wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh && bash firewall_apply.sh
+```
 
 ## Package
 
-```
+```bash
 wget https://raw.githubusercontent.com/Stepulin/general/master/menu.sh && bash menu.sh
 ```
 
 OR
 
-```
+```bash
 wget https://raw.githubusercontent.com/Stepulin/general/master/menu.sh && chmod +x menu.sh && ./menu.sh
 ```
 
