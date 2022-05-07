@@ -28,6 +28,7 @@ apt-get update -y && apt-get full-upgrade -y
 ```
 
 ------
+#### FIRST run
 
 ```bash
 mkdir .ssh; nano .ssh/authorized_keys;
