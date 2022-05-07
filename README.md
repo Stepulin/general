@@ -53,7 +53,7 @@ wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/nftables
 #### iptables
 
 ```bash
-wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh && wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh && bash firewall_apply.sh
+https://raw.githubusercontent.com/Stepulin/general/master/firewall/iptables/firewall_apply.sh && wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/iptables/firewall_rules.sh && bash firewall_apply.sh
 ```
 
 ## Package
