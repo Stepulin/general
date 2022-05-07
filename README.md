@@ -35,7 +35,19 @@ mkdir .ssh; nano .ssh/authorized_keys;
 ```
 
 ```bash
-apt install mc net-tools apt-transport-https aptitude wget ca-certificates curl git vlan htop ssh nano sudo dirmngr software-properties-common nfs-common cifs-utils samba-client lsb-release
+apt install mc net-tools apt-transport-https aptitude wget ca-certificates curl git vlan htop ssh nano sudo lsb-release
+```
+
+###### Extra I
+
+```bash
+apt install dirmngr software-properties-common
+```
+
+###### Extra II
+
+```bash
+apt install nfs-common cifs-utils samba-client
 ```
 
 ```bash
