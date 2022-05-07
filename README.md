@@ -27,8 +27,8 @@ mv /etc/apt/sources.list /etc/apt/sources.list.old && nano /etc/apt/sources.list
 apt-get update -y && apt-get full-upgrade -y
 ```
 
+#### UPGRADE DONE
 ------
-#### FIRST run
 
 ```bash
 mkdir .ssh; nano .ssh/authorized_keys;
@@ -42,14 +42,17 @@ apt install mc net-tools apt-transport-https aptitude wget ca-certificates curl 
 apt install bash-completion && . /etc/bash_completion && echo . /etc/bash_completion >> .bashrc
 ```
 
+## FIREWALL
 
-## firewall ~~iptables~~ => nftables
-
-~~wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh && wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh && bash firewall_apply.sh~~
+#### nftables
 
 ```
 wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/nftables/nftables_install.sh && bash nftables_install.sh
 ```
+
+#### iptables
+
+wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_apply.sh && wget https://raw.githubusercontent.com/Stepulin/general/master/firewall/firewall_rules.sh && bash firewall_apply.sh
 
 ## Package
 
