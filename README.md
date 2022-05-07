@@ -38,6 +38,10 @@ mkdir .ssh; nano .ssh/authorized_keys;
 apt install mc net-tools apt-transport-https aptitude wget ca-certificates curl git vlan htop ssh nano sudo lsb-release
 ```
 
+```bash
+apt install bash-completion && . /etc/bash_completion && echo . /etc/bash_completion >> .bashrc
+```
+
 ###### Extra I
 
 ```bash
@@ -48,10 +52,6 @@ apt install dirmngr software-properties-common
 
 ```bash
 apt install nfs-common cifs-utils samba-client
-```
-
-```bash
-apt install bash-completion && . /etc/bash_completion && echo . /etc/bash_completion >> .bashrc
 ```
 
 ## FIREWALL
