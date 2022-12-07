@@ -1,0 +1,9 @@
+#8888# default for opening
+*9999# default for management
+
+change management *9999# -> 0# to enter "changing mode" -> NEWPASSWORD# NEWPASSWORD# -> * for escape
+change opening *NEWPASSWORD# -> 92# to enter "changing mode" -> NEWPASSforOPEN# NEWPASSforOPEN# -> * for escape
+
+add management card *NEWPASSWORD# -> 80# to add management card -> swipe it; then * for escape if it is not done automatically
+
+add new card SWIPE mgmtcard -> swipe the new one -> swipe mgmtcard again; then * for escape if it is not done automatically
