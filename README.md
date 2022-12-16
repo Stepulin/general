@@ -111,13 +111,3 @@ wget https://raw.githubusercontent.com/Stepulin/general/master/package/grav/grav
 ```
 
 Go to https://yourdomain.com, do the setup and then reboot to reload your full iptable.
-
-
-### Networking Debian 11
-
-```bash
-auto ens18
-iface ens18 inet static
-	address X.X.X.X/YZ
-	gateway X.X.X.X
-```
