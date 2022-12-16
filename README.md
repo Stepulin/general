@@ -115,7 +115,9 @@ Go to https://yourdomain.com, do the setup and then reboot to reload your full i
 
 ### Networking Debian 11
 
+```bash
 auto ens18
 iface ens18 inet static
 	address X.X.X.X/YZ
 	gateway X.X.X.X
+```
