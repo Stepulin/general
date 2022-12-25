@@ -111,3 +111,11 @@ wget https://raw.githubusercontent.com/Stepulin/general/master/package/grav/grav
 ```
 
 Go to https://yourdomain.com, do the setup and then reboot to reload your full iptable.
+
+
+
+#### Python
+
+pip install --upgrade pip
+
+pip3
