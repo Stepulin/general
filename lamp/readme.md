@@ -24,3 +24,17 @@ update-alternatives --set php-config /usr/bin/php-config8.1
 
 # verify the current version
 php -v
+
+# Recommended values php php.ini
+
+upload_max_filesize = 32M
+
+post_max_size = 48M
+
+memory_limit = 256M
+
+max_execution_time = 600
+
+max_input_vars = 1000
+
+max_input_time = 400
