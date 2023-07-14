@@ -119,3 +119,11 @@ Go to https://yourdomain.com, do the setup and then reboot to reload your full i
 pip install --upgrade pip
 
 pip3
+
+
+#### Proxmox | import (unfinished)
+cd /mnt/data-hdd/image/
+qm importdisk <id> name.img data-ssd
+qm set <id> --scsi0 local-lvm:vm-<id>-disk-0
+
+qm set <id> --scsi0 local-lvm:vm-<id>-disk-0.raw?
