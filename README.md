@@ -95,6 +95,13 @@ dd if=/dev/zero of=/tmp/test2.img bs=512 count=1000 oflag=dsync
 #### Windows Server HDD usage in Task Manager
 diskperf -y
 
+#### W11 cannot add another network printer
+-> 1) rundll32 printui.dll,PrintUIEntry /il
+=> did not work
+-> 2) WIN + R useraccountcontrolsettings SET to NEVER
+-> 3) repeat 1)
+https://www.makeuseof.com/windows-10-11-error-740-printer/
+
 #### CentOS change IP
 nmtui
 
