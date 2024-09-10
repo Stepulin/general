@@ -1,0 +1,30 @@
+sudo a2dismod php7.4
+sudo a2enmod php8.0
+sudo service apache2 restart
+sudo update-alternatives --config php
+sudo update-alternatives --config phar
+sudo update-alternatives --config phar.phar
+sudo service apache2 restart
+
+sudo a2dismod php8.0
+sudo a2enmod php7.4
+sudo service apache2 restart
+sudo update-alternatives --config php
+sudo update-alternatives --config phar
+sudo update-alternatives --config phar.phar
+sudo service apache2 restart
+
+sudo update-alternatives --config php
+sudo a2dismod php7.1 // disable
+sudo a2enmod php5.6  // enable
+
+### MYSQL backup
+
+mysqldump --default-character-set=utf8mb4 -h localhost -u UZIVATEL --password=HESLO --single-transaction -C -Q -e --create-options NAZEVDB > moodle-database_DATUM.sql
+gzip moodle-database.sql
+
+### tuning DB via mysqltuner
+
+innodb_buffer_pool_size = 2G
+innodb_log_file_size=512M
+innodb_log_buffer_size=16M
